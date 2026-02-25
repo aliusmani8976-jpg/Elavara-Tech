@@ -11,6 +11,7 @@
             --accent: #FF8C42; /* Warm Orange */
             --light: #F9F9F7; /* Cream */
             --dark: #1A1A1A;
+            --text-gray: #555;
         }
         
         body {
@@ -19,6 +20,7 @@
             margin: 0;
             color: var(--dark);
             background-color: var(--light);
+            padding-bottom: 60px; /* Space for mobile sticky bar */
         }
 
         /* NAVIGATION */
@@ -29,8 +31,30 @@
             padding: 1rem 5%;
             background: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); letter-spacing: -1px; }
+        .logo { 
+            font-weight: 800; 
+            font-size: 1.5rem; 
+            color: var(--primary); 
+            letter-spacing: -1px; 
+        }
+        .nav-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-size: 0.9rem;
+        }
+        .nav-contact a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .nav-contact a:hover { color: var(--accent); }
+        .nav-contact span { color: var(--text-gray); font-size: 0.8rem; }
+
         .cta-btn {
             background: var(--accent);
             color: white;
@@ -39,47 +63,73 @@
             border-radius: 50px;
             font-weight: bold;
             transition: transform 0.2s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
         }
-        .cta-btn:hover { transform: scale(1.05); }
+        .cta-btn:hover { transform: scale(1.05); background: #e67e3a; }
+        .cta-btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
 
-        /* HERO SECTION - EMOTIONAL HOOK */
+        /* HERO SECTION */
         header {
             text-align: center;
             padding: 5rem 1rem;
             background: linear-gradient(rgba(46, 92, 56, 0.9), rgba(46, 92, 56, 0.8)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
+            background-position: center;
             color: white;
         }
         h1 { font-size: 3rem; margin-bottom: 1rem; line-height: 1.1; }
-        .sub-head { font-size: 1.25rem; max-width: 600px; margin: 0 auto 2rem auto; opacity: 0.9; }
-
-        /* THE PAIN POINTS (2026 Context) */
-        .pain-points {
-            padding: 4rem 5%;
-            background: white;
-            text-align: center;
+        .sub-head { font-size: 1.25rem; max-width: 600px; margin: 0 auto 2rem auto; opacity: 0.95; }
+        .hero-contact {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            background: rgba(255,255,255,0.15);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
         }
+        .hero-contact a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        .hero-contact a:hover { text-decoration: underline; }
+
+        /* SECTIONS */
+        .section { padding: 4rem 5%; }
+        .bg-white { background: white; }
+        .bg-primary { background: var(--primary); color: white; }
+        .text-center { text-align: center; }
+        .text-primary { color: var(--primary); }
+        
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
         .card {
             padding: 2rem;
             border: 1px solid #eee;
             border-radius: 12px;
             transition: 0.3s;
+            background: white;
         }
-        .card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.1); transform: translateY(-3px); }
         .icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
 
-        /* SERVICES (THE MONEY MAKERS) */
-        .services {
-            padding: 5rem 5%;
-            background: var(--primary);
-            color: white;
-        }
+        /* SERVICES */
         .service-item {
             background: rgba(255,255,255,0.1);
             padding: 2rem;
@@ -87,20 +137,79 @@
             margin-bottom: 1rem;
             border-left: 5px solid var(--accent);
         }
-        .service-item h3 { margin-top: 0; }
+        .service-item h3 { margin-top: 0; color: white; }
+        .service-item p { opacity: 0.95; }
+
+        /* CONTACT SECTION */
+        .contact-box {
+            background: white;
+            color: var(--dark);
+            padding: 3rem;
+            border-radius: 16px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1.5rem 0;
+            font-size: 1.2rem;
+        }
+        .contact-detail a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .contact-detail a:hover { color: var(--accent); }
+        .contact-detail span { font-size: 1.5rem; margin-right: 10px; }
 
         /* FOOTER */
         footer {
             text-align: center;
             padding: 2rem;
             background: var(--dark);
-            color: #888;
+            color: #aaa;
             font-size: 0.9rem;
         }
+        footer a { color: white; text-decoration: none; }
 
-        /* MOBILE OPTIMIZATION */
+        /* MOBILE STICKY BAR */
+        .mobile-sticky {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 12px 5%;
+            display: flex;
+            gap: 10px;
+            box-shadow: 0 -2px 15px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+        .mobile-sticky a {
+            flex: 1;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+        .mobile-call { background: var(--primary); color: white; }
+        .mobile-email { background: var(--accent); color: white; }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
+            .nav-contact { display: none; } /* Hide nav contact on mobile, use sticky bar instead */
+            .section { padding: 3rem 5%; }
+            .contact-box { padding: 2rem 1.5rem; }
+        }
+        @media (min-width: 769px) {
+            .mobile-sticky { display: none; } /* Hide sticky bar on desktop */
         }
     </style>
 </head>
@@ -109,21 +218,33 @@
     <!-- NAV -->
     <nav>
         <div class="logo">ELAVARA TECH</div>
-        <a href="#contact" class="cta-btn">Get Your Free Audit</a>
+        <div class="nav-contact">
+            <a href="tel:+447415437184">📞 +44 7415 437184</a>
+            <span><a href="mailto:elavaratech@gmail.com" style="color:var(--text-gray)">✉️ elavaratech@gmail.com</a></span>
+        </div>
+        <a href="#contact" class="cta-btn">Get Free Audit</a>
     </nav>
 
     <!-- HERO -->
     <header>
         <h1>Don't Let The Big Chains<br>Eat Your Lunch.</h1>
         <p class="sub-head">In 2026, technology isn't just for corporations. We give your local grocery store the same AI superpowers as Amazon, so you can keep your community fed and your profits high.</p>
-        <br>
+        
+        <div class="hero-contact">
+            <strong>Call us directly:</strong><br>
+            <a href="tel:+447415437184">📞 +44 7415 437184</a> or 
+            <a href="mailto:elavaratech@gmail.com">✉️ Email Us</a>
+        </div>
+        <br><br>
         <a href="#contact" class="cta-btn">Boost My Profits Today</a>
     </header>
 
     <!-- THE PROBLEM -->
-    <section class="pain-points">
-        <h2 style="color: var(--primary);">The Grocery Struggle is Real</h2>
-        <p>You know your customers by name. But are you losing them to apps and algorithms?</p>
+    <section class="section bg-white">
+        <div class="text-center">
+            <h2 class="text-primary">The Grocery Struggle is Real</h2>
+            <p style="max-width: 700px; margin: 1rem auto; color: var(--text-gray);">You know your customers by name. But are you losing them to apps and algorithms?</p>
+        </div>
         
         <div class="grid-3">
             <div class="card">
@@ -145,9 +266,11 @@
     </section>
 
     <!-- THE SOLUTION -->
-    <section class="services">
-        <h2 style="text-align: center;">Elavara Tech: Simple Solutions for Real Stores</h2>
-        <p style="text-align: center; margin-bottom: 3rem;">We don't sell complex software. We sell results using simple, affordable tech.</p>
+    <section class="section bg-primary">
+        <div class="text-center">
+            <h2>Elavara Tech: Simple Solutions for Real Stores</h2>
+            <p style="margin-bottom: 3rem; opacity: 0.95;">We don't sell complex software. We sell results using simple, affordable tech.</p>
+        </div>
         
         <div class="grid-3">
             <div class="service-item">
@@ -165,16 +288,54 @@
         </div>
     </section>
 
-    <!-- CONTACT / CTA -->
-    <section id="contact" style="padding: 5rem 5%; text-align: center;">
-        <h2 style="font-size: 2.5rem; color: var(--primary);">Ready to Modernize Your Store?</h2>
-        <p style="max-width: 600px; margin: 0 auto 2rem auto;">Let's have a coffee. I will show you exactly how much money you are losing by not using these simple tools.</p>
-        <a href="mailto:hello@elavaratech.com" class="cta-btn" style="font-size: 1.2rem; padding: 15px 40px;">Book Free Consultation</a>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section text-center">
+        <div class="contact-box">
+            <h2 class="text-primary" style="margin-top: 0;">Ready to Modernize Your Store?</h2>
+            <p style="color: var(--text-gray);">Let's have a coffee. I will show you exactly how much money you are losing by not using these simple tools.</p>
+            
+            <div class="contact-detail">
+                <span>📞</span>
+                <div>
+                    <div style="font-size: 0.9rem; color: var(--text-gray);">Call or WhatsApp</div>
+                    <a href="tel:+447415437184" style="font-size: 1.3rem;">+44 7415 437184</a>
+                </div>
+            </div>
+            
+            <div class="contact-detail">
+                <span>✉️</span>
+                <div>
+                    <div style="font-size: 0.9rem; color: var(--text-gray);">Email Us</div>
+                    <a href="mailto:elavaratech@gmail.com" style="font-size: 1.3rem;">elavaratech@gmail.com</a>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem;">
+                <a href="tel:+447415437184" class="cta-btn" style="margin: 5px;">📞 Call Now</a>
+                <a href="mailto:elavaratech@gmail.com" class="cta-btn-outline" style="margin: 5px;">✉️ Send Email</a>
+            </div>
+            
+            <p style="font-size: 0.85rem; color: #999; margin-top: 2rem;">
+                <em>Response within 2 hours during business days</em>
+            </p>
+        </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Elavara Tech. Helping Local Grocers Thrive.</p>
+        <p><strong>Elavara Tech</strong> — Helping Local Grocers Thrive in 2026</p>
+        <p style="margin: 10px 0;">
+            <a href="tel:+447415437184">+44 7415 437184</a> • 
+            <a href="mailto:elavaratech@gmail.com">elavaratech@gmail.com</a>
+        </p>
+        <p style="font-size: 0.8rem; opacity: 0.7;">© 2026 Elavara Tech. All rights reserved.</p>
     </footer>
+
+    <!-- MOBILE STICKY BAR (High Conversion Feature) -->
+    <div class="mobile-sticky">
+        <a href="tel:+447415437184" class="mobile-call">📞 Call Now</a>
+        <a href="mailto:elavaratech@gmail.com" class="mobile-email">✉️ Email</a>
+    </div>
 
 </body>
 </html>
