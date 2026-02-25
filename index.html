@@ -3,284 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elavara Tech | AI Solutions for Small Business Growth</title>
-    <meta name="description" content="Elavara Tech helps small businesses automate operations and boost sales with simple, affordable AI solutions. Reclaim your time today.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS (via CDN for instant styling) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Custom Config for Elavara Brand Colors -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            blue: '#0F172A',    /* Deep Trust Blue */
-                            accent: '#F59E0B',  /* Growth Orange */
-                            light: '#F8FAFC'    /* Clean Background */
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
+    <title>Elavara Tech | Grow Your Local Grocery Business</title>
     <style>
-        /* Smooth Scrolling */
-        html { scroll-behavior: smooth; }
-        /* Custom Animations */
-        .fade-in { animation: fadeIn 1s ease-in; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        /* Button Hover Effect */
-        .btn-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        /* VETERAN DESIGNER NOTES: Clean typography, ample whitespace, clear hierarchy. */
+        :root {
+            --primary: #2E5C38; /* Forest Green */
+            --accent: #FF8C42; /* Warm Orange */
+            --light: #F9F9F7; /* Cream */
+            --dark: #1A1A1A;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        /* NAVIGATION */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); letter-spacing: -1px; }
+        .cta-btn {
+            background: var(--accent);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .cta-btn:hover { transform: scale(1.05); }
+
+        /* HERO SECTION - EMOTIONAL HOOK */
+        header {
+            text-align: center;
+            padding: 5rem 1rem;
+            background: linear-gradient(rgba(46, 92, 56, 0.9), rgba(46, 92, 56, 0.8)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            color: white;
+        }
+        h1 { font-size: 3rem; margin-bottom: 1rem; line-height: 1.1; }
+        .sub-head { font-size: 1.25rem; max-width: 600px; margin: 0 auto 2rem auto; opacity: 0.9; }
+
+        /* THE PAIN POINTS (2026 Context) */
+        .pain-points {
+            padding: 4rem 5%;
+            background: white;
+            text-align: center;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .card {
+            padding: 2rem;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+        .card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+
+        /* SERVICES (THE MONEY MAKERS) */
+        .services {
+            padding: 5rem 5%;
+            background: var(--primary);
+            color: white;
+        }
+        .service-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--accent);
+        }
+        .service-item h3 { margin-top: 0; }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark);
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+        }
     </style>
 </head>
-<body class="font-sans text-slate-800 bg-brand-light antialiased">
+<body>
 
-    <!-- NAVIGATION -->
-    <nav class="bg-white shadow-sm fixed w-full z-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <!-- Updated Brand Name -->
-                    <span class="text-2xl font-bold text-brand-blue"><i class="fa-solid fa-layer-group text-brand-accent mr-2"></i>Elavara Tech</span>
-                </div>
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#problems" class="text-slate-600 hover:text-brand-blue font-medium">Problems</a>
-                    <a href="#solutions" class="text-slate-600 hover:text-brand-blue font-medium">Solutions</a>
-                    <a href="#contact" class="bg-brand-blue text-white px-5 py-2 rounded-full font-medium hover:bg-slate-800 transition">Free Audit</a>
-                </div>
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-blue focus:outline-none">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4">
-            <a href="#problems" class="block py-2 text-slate-600">Problems</a>
-            <a href="#solutions" class="block py-2 text-slate-600">Solutions</a>
-            <a href="#contact" class="block py-2 text-brand-accent font-bold">Free Audit</a>
-        </div>
+    <!-- NAV -->
+    <nav>
+        <div class="logo">ELAVARA TECH</div>
+        <a href="#contact" class="cta-btn">Get Your Free Audit</a>
     </nav>
 
-    <!-- HERO SECTION -->
-    <header class="relative bg-brand-blue pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="max-w-6xl mx-auto px-4 relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6 fade-in">
-                Stop Working 14-Hour Days. <br>
-                <span class="text-brand-accent">Let Elavara Tech Run Your Business.</span>
-            </h1>
-            <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto fade-in">
-                You didn't start a business to become a slave to admin work. We install simple systems that handle leads, scheduling, and follow-ups—so you can reclaim your life.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4 fade-in">
-                <a href="#contact" class="bg-brand-accent text-white text-lg px-8 py-4 rounded-full font-bold btn-hover transition">
-                    Get My Free Time-Saver Audit
-                </a>
-                <a href="#solutions" class="bg-transparent border-2 border-slate-500 text-white text-lg px-8 py-4 rounded-full font-bold hover:bg-white hover:text-brand-blue transition">
-                    See How It Works
-                </a>
-            </div>
-            <p class="mt-4 text-slate-400 text-sm"><i class="fa-solid fa-check text-brand-accent mr-1"></i> No tech jargon. <i class="fa-solid fa-check text-brand-accent mr-1 ml-2"></i> No pressure.</p>
-        </div>
-        <!-- Background Decoration -->
-        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-            <div class="absolute right-0 top-0 w-96 h-96 bg-brand-accent rounded-full filter blur-3xl"></div>
-            <div class="absolute left-0 bottom-0 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl"></div>
-        </div>
+    <!-- HERO -->
+    <header>
+        <h1>Don't Let The Big Chains<br>Eat Your Lunch.</h1>
+        <p class="sub-head">In 2026, technology isn't just for corporations. We give your local grocery store the same AI superpowers as Amazon, so you can keep your community fed and your profits high.</p>
+        <br>
+        <a href="#contact" class="cta-btn">Boost My Profits Today</a>
     </header>
 
-    <!-- PAIN POINTS SECTION -->
-    <section id="problems" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Does This Sound Like Your Last Week?</h2>
-                <p class="text-slate-600 text-lg">Be honest. Most business owners we talk to are struggling with the same things.</p>
+    <!-- THE PROBLEM -->
+    <section class="pain-points">
+        <h2 style="color: var(--primary);">The Grocery Struggle is Real</h2>
+        <p>You know your customers by name. But are you losing them to apps and algorithms?</p>
+        
+        <div class="grid-3">
+            <div class="card">
+                <span class="icon">📉</span>
+                <h3>Food Waste</h3>
+                <p>Throwing away produce that didn't sell? That is literally throwing cash in the trash.</p>
             </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Pain Card -->
-                <div class="p-6 bg-slate-50 rounded-xl border-l-4 border-red-500">
-                    <div class="flex items-start">
-                        <i class="fa-solid fa-xmark text-red-500 text-2xl mt-1 mr-4"></i>
-                        <div>
-                            <h3 class="font-bold text-lg mb-2">Missed Calls & Leads</h3>
-                            <p class="text-slate-600">You were busy serving customers while potential revenue went to voicemail.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Pain Card -->
-                <div class="p-6 bg-slate-50 rounded-xl border-l-4 border-red-500">
-                    <div class="flex items-start">
-                        <i class="fa-solid fa-xmark text-red-500 text-2xl mt-1 mr-4"></i>
-                        <div>
-                            <h3 class="font-bold text-lg mb-2">Sunday Night Emails</h3>
-                            <p class="text-slate-600">Spending your weekend answering admin questions instead of being with family.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Pain Card -->
-                <div class="p-6 bg-slate-50 rounded-xl border-l-4 border-red-500">
-                    <div class="flex items-start">
-                        <i class="fa-solid fa-xmark text-red-500 text-2xl mt-1 mr-4"></i>
-                        <div>
-                            <h3 class="font-bold text-lg mb-2">Tech Overwhelm</h3>
-                            <p class="text-slate-600">Knowing you need "automation" but afraid of wasting money on tools you don't understand.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Pain Card -->
-                <div class="p-6 bg-slate-50 rounded-xl border-l-4 border-red-500">
-                    <div class="flex items-start">
-                        <i class="fa-solid fa-xmark text-red-500 text-2xl mt-1 mr-4"></i>
-                        <div>
-                            <h3 class="font-bold text-lg mb-2">Stuck in the Weeds</h3>
-                            <p class="text-slate-600">You're working <em>in</em> the business, not <em>on</em> it. No time to grow.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="card">
+                <span class="icon">📱</span>
+                <h3>Invisible Online</h3>
+                <p>If customers can't find your daily specials on their phone, they are driving to the competitor.</p>
             </div>
-            <div class="mt-12 text-center">
-                <p class="text-xl font-medium text-brand-blue">It's not your fault. The tech world is noisy. <br><span class="text-brand-accent font-bold">But you don't need more tools. You need Elavara Tech.</span></p>
+            <div class="card">
+                <span class="icon">⏳</span>
+                <h3>No Time for Marketing</h3>
+                <p>You are busy running the store. You don't have time to write Facebook posts or manage emails.</p>
             </div>
         </div>
     </section>
 
-    <!-- SOLUTIONS SECTION -->
-    <section id="solutions" class="py-20 bg-brand-light">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Imagine Your Business 30 Days From Now</h2>
-                <p class="text-slate-600 text-lg">Here's what happens when we install your custom growth system.</p>
+    <!-- THE SOLUTION -->
+    <section class="services">
+        <h2 style="text-align: center;">Elavara Tech: Simple Solutions for Real Stores</h2>
+        <p style="text-align: center; margin-bottom: 3rem;">We don't sell complex software. We sell results using simple, affordable tech.</p>
+        
+        <div class="grid-3">
+            <div class="service-item">
+                <h3>🚀 The "Flash Sale" System</h3>
+                <p>We set up an automated WhatsApp/SMS system. When you have veggies nearing expiry, one click sends a discount offer to 500 locals. Clear inventory instantly.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Solution 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fa-solid fa-phone-volume text-brand-blue text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">The 24/7 Receptionist</h3>
-                    <p class="text-slate-600">AI answers every call and books appointments instantly, even at 2 AM. Never miss a lead again.</p>
-                </div>
-                <!-- Solution 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition text-center">
-                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fa-solid fa-chart-line text-brand-accent text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Auto-Pilot Sales</h3>
-                    <p class="text-slate-600">Systems that follow up with every lead automatically until they buy. Wake up to new sales.</p>
-                </div>
-                <!-- Solution 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition text-center">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fa-solid fa-clock text-green-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">15+ Hours Back</h3>
-                    <p class="text-slate-600">Save 15 hours a week. That's 60 hours a month. What could you do with an extra week of freedom?</p>
-                </div>
+            <div class="service-item">
+                <h3>⭐ The 5-Star Reputation Builder</h3>
+                <p>We install a simple QR code system at your counter that automatically asks happy customers to review you on Google. Dominate local search.</p>
+            </div>
+            <div class="service-item">
+                <h3>📢 The Digital Flyer Service</h3>
+                <p>Stop handwriting signs. We use AI design tools to create beautiful, professional weekly circulars for your social media and email list.</p>
             </div>
         </div>
     </section>
 
-    <!-- SOCIAL PROOF / BETA OFFER -->
-    <section class="py-20 bg-brand-blue text-white">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">"I woke up to 3 booked appointments I didn't even touch. This is magic."</h2>
-            <p class="text-slate-300 mb-8">— Sarah J., Owner of Bloom Boutique</p>
-            <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm inline-block">
-                <p class="font-bold text-brand-accent text-lg">🚀 Elavara Tech Beta Partner Offer</p>
-                <p class="mt-2">We are selecting 5 local businesses to pilot our system at 50% off in exchange for a testimonial.</p>
-            </div>
-        </div>
+    <!-- CONTACT / CTA -->
+    <section id="contact" style="padding: 5rem 5%; text-align: center;">
+        <h2 style="font-size: 2.5rem; color: var(--primary);">Ready to Modernize Your Store?</h2>
+        <p style="max-width: 600px; margin: 0 auto 2rem auto;">Let's have a coffee. I will show you exactly how much money you are losing by not using these simple tools.</p>
+        <a href="mailto:hello@elavaratech.com" class="cta-btn" style="font-size: 1.2rem; padding: 15px 40px;">Book Free Consultation</a>
     </section>
 
-    <!-- CONTACT / CTA SECTION -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-3xl mx-auto px-4">
-            <div class="bg-slate-50 p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold text-brand-blue mb-4">Let's Find Your Hidden Profit Leaks</h2>
-                    <p class="text-slate-600">Most businesses lose $2K-$5K/month from missed calls. I'll show you where you're leaking money—for free.</p>
-                </div>
-                
-                <!-- Formspree Form -->
-                <!-- IMPORTANT: Replace 'YOUR_FORMSPREE_ID' with your actual Formspree ID -->
-                <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Name</label>
-                            <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Business Name</label>
-                            <input type="text" name="business" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
-                        <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2"> Biggest Challenge?</label>
-                        <select name="challenge" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition">
-                            <option>Missed Calls/Leads</option>
-                            <option>Too Much Admin Work</option>
-                            <option>Low Sales Conversion</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="w-full bg-brand-accent text-white font-bold text-lg py-4 rounded-lg btn-hover transition">
-                        Get My Free Plan
-                    </button>
-                    <p class="text-xs text-center text-slate-500 mt-4">🔒 100% Confidential. No spam. Unsubscribe anytime.</p>
-                </form>
-
-                <div class="mt-8 text-center">
-                    <p class="text-slate-600 mb-4">Prefer to talk now?</p>
-                    <!-- Replace with your Calendly Link -->
-                    <a href="https://calendly.com/" target="_blank" class="inline-flex items-center text-brand-blue font-bold hover:underline">
-                        <i class="fa-regular fa-calendar-check mr-2"></i> Book a 15-Min Strategy Call
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 text-slate-400 py-12">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <p class="mb-4">&copy; 2026 Elavara Tech. Built with ❤️ for Small Business Owners.</p>
-            <div class="flex justify-center space-x-6">
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin text-xl"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter text-xl"></i></a>
-                <!-- Updated Email -->
-                <a href="mailto:hello@elavaratech.com" class="hover:text-white transition"><i class="fa-solid fa-envelope text-xl"></i></a>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2026 Elavara Tech. Helping Local Grocers Thrive.</p>
     </footer>
 
-    <!-- Simple JavaScript for Mobile Menu -->
-    <script>
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>
